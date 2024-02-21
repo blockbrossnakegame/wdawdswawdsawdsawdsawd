@@ -30,12 +30,15 @@ client.on("message", async (message) => {
       message.channel.send("hi");
     }
     if (message.content.match(/https?:\/\/\S+/)) {
-      if (message.channelId === "1182414660855672953") {
+      if (message.content.match("https://tenor.com/view/")) {
       } else {
-        message.delete();
-        message.channel.send(
+        if (message.channelId === "1182414660855672953") {
+        } else {
+          message.delete();
+          message.channel.send(
           `You can not send links here buddy. <@${message.author.id}>`
-        );
+          );
+        }
       }
     }
     if (message.content.match("discord.gg")) {
