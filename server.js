@@ -1,6 +1,16 @@
 let Discord = require("discord.js");
 let client = new Discord.Client();
 let { MessageEmbed } = require("discord.js");
+const express = require("express");
+const app = express();
+
+app.listen(3000, () => {
+  console.log("Bies-bot is waking up.");
+})
+
+app.get("/", (req, res) => {
+  res.send(`bies-bot`);
+})
 
 client.on("ready", () => {
   client.user.setActivity("pizza in the oven", { type: "WATCHING" });
