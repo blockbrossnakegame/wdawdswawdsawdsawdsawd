@@ -88,4 +88,4 @@ client.on("messageDelete", async (deletedMessage) => {
   channel.send(embed);
 });
 
-client.login('MTE3ODA3NTAxNjQ1ODQwMzg1MA.G3Jt_E.skFIsGXVxC87jOSmCWdGlz1q4VDRnbDprW7at4');
+client.login(process.env.token);
