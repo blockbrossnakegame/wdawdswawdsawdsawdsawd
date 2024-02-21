@@ -3,6 +3,7 @@ let client = new Discord.Client();
 let { MessageEmbed } = require("discord.js");
 const express = require("express");
 const app = express();
+const keep_alive = require('./keep_alive.js')
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
