@@ -30,7 +30,7 @@ client.on("message", async (message) => {
       message.channel.send("hi");
     }
     if (message.content.match(/https?:\/\/\S+/)) {
-      if (message.content.match("https://tenor.com/view/")) {
+      if (message.content.startsWith("https://tenor.com/view/")) {
       } else {
         if (message.channelId === "1182414660855672953") {
         } else {
