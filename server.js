@@ -18,15 +18,28 @@ app.get("/", (req, res) => {
   res.send(`bies-bot`);
 })
 
-app.get("/effect", (req, res) => {
+app.get("/effect1", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
   const embed = new MessageEmbed()
   .setTitle(`A death effect has been updated`)
-  .setDescription(`Effect ID: **${effectname}**`)
+  .setDescription(`Effect ID: **${effectname}#1**
+  Creator ID: **${effectname}**`))
   .setColor("a0ad96");
   channel.send(embed);
-  res.send(`bies-bot`);
+  res.send(`bies-bot 1`);
+})
+
+app.get("/effect2", (req, res) => {
+  var effectname = req.param("effectname");
+  let channel = client.channels.cache.get("1210262876288319559");
+  const embed = new MessageEmbed()
+  .setTitle(`A death effect has been updated`)
+  .setDescription(`Effect ID: **${effectname}#2**
+  Creator ID: **${effectname}**`)
+  .setColor("a0ad96");
+  channel.send(embed);
+  res.send(`bies-bot 1`);
 })
 
 client.on("message", async (message) => {
