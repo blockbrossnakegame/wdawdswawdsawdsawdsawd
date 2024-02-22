@@ -106,7 +106,7 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.content.match("is zero a femboy")) {
+    if (command.match("is zero a femboy")) {
       message.channel.send(
         `yes he is`
       );
