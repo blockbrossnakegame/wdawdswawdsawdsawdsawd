@@ -30,12 +30,9 @@ client.on("message", async (message) => {
       message.channel.send("hi");
     }
     if (message.content.match(/https?:\/\/\S+/)) {
-      if (message.content.match("https://tenor.com/view/")) {
-        message.channel.send(
-          `Tenor link aproved <@${message.author.id}>`
-          );
+      if (message.channelId === "1182414660855672953") {
       } else {
-        if (message.channelId === "1182414660855672953") {
+        if ((message.content.match("https://tenor.com/view/") || message.content.match("http://tenor.com/view/")) {
         } else {
           message.delete();
           message.channel.send(
