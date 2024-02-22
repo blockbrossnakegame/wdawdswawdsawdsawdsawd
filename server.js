@@ -30,18 +30,6 @@ client.on("message", async (message) => {
     if (message.content === "hi") {
       message.channel.send("hi");
     }
-    if (message.content.match(/https?:\/\/\S+/) && !message.member.roles("https://tenor.com/view/"))) {
-      if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
-      } else {
-        if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner) ) {
-        } else {
-          message.delete();
-          message.channel.send(
-          `You can not send links here buddy. <@${message.author.id}>`
-          );
-        }
-      }
-    }
     if (message.content.match("discord.gg")) {
       if (message.channelId === "1182414660855672953") {
       } else {
