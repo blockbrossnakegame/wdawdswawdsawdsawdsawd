@@ -24,10 +24,10 @@ app.get("/effect1", (req, res) => {
   const embed = new MessageEmbed()
   .setTitle(`A death effect has been updated`)
   .setDescription(`Effect ID: **${effectname}#1**
-  Creator ID: **${effectname}**`))
+  Creator ID: **${effectname}**`)
   .setColor("a0ad96");
   channel.send(embed);
-  res.send(`bies-bot 1`);
+  res.send(`bies-bot 1`)
 })
 
 app.get("/effect2", (req, res) => {
@@ -39,7 +39,7 @@ app.get("/effect2", (req, res) => {
   Creator ID: **${effectname}**`)
   .setColor("a0ad96");
   channel.send(embed);
-  res.send(`bies-bot 1`);
+  res.send(`bies-bot 2`)
 })
 
 client.on("message", async (message) => {
