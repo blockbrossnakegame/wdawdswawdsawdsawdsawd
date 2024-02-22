@@ -4,7 +4,8 @@ let { MessageEmbed } = require("discord.js");
 const express = require("express");
 const app = express();
 const keep_alive = require('./keep_alive.js')
-
+const allowedRole = '1208186017337581699';
+const owner = '1115992837775953951';
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
 })
@@ -29,10 +30,10 @@ client.on("message", async (message) => {
     if (message.content === "hi") {
       message.channel.send("hi");
     }
-    if (message.content.match(/https?:\/\/\S+/) && !message.content.includes("https://tenor.com/view/"))) {
+    if (message.content.match(/https?:\/\/\S+/) && !message.member.roles("https://tenor.com/view/"))) {
       if (message.channelId === "1182414660855672953") {
       } else {
-        if ((message.content.match("https://tenor.com/view/") || message.content.match("http://tenor.com/view/")) {
+        if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner) ) {
         } else {
           message.delete();
           message.channel.send(
