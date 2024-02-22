@@ -67,7 +67,7 @@ client.on("message", async (message) => {
         }
       }
     }
-    if (message.content.match("discord.gg")) {
+    if (command.match("discord.gg")) {
       if (message.channelId === "1182414660855672953") {
       } else {
         message.delete();
@@ -76,42 +76,42 @@ client.on("message", async (message) => {
         );
       }
     }
-    if (message.content.match("CUNT") || message.content.match("cunt")) {
+    if (command.match("cunt"))) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (message.content.match("FAGGOT") || message.content.match("faggot")) {
+    if (command.match("faggot")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (message.content.match("NIGGER") || message.content.match("nigger")) {
+    if (command.match("nigger")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (message.content.match("NIGGA") || message.content.match("nigga")) {
+    if (command.match("nigga")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (message.content.match("FAGGOT") || message.content.match("faggot")) {
+    if (command.match("faggot")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (message.content.match("is zero a femboy") || message.content.match("IS ZERO A FEMBOY")) {
+    if (command.content.match("is zero a femboy")) {
       message.channel.send(
         `yes he is`
       );
     }
-    if (message.content.match("<@904076782666391583>") || message.content.match("<@1017921613913657364>")) {
+    if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
       message.channel.send(
         `The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`
       );
