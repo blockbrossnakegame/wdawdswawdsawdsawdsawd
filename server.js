@@ -22,7 +22,7 @@ app.get("/effect", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
   const embed = new MessageEmbed()
-  .setTitle(`${effectname} has been updated`)
+  .setTitle(`A death effect has been updated`)
   .setDescription(`Effect ID: **${effectname}**`)
   .setColor("a0ad96");
   channel.send(embed);
