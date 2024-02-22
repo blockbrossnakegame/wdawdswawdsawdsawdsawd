@@ -76,7 +76,7 @@ client.on("message", async (message) => {
         );
       }
     }
-    if (command.match("cunt"))) {
+    if (command.match("cunt")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
