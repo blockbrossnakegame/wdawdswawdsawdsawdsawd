@@ -45,16 +45,17 @@ app.get("/effect2", (req, res) => {
 client.on("message", async (message) => {
   if (message.author.bot) {
   } else {
+    const command = message.content.toLowerCase()
     let role = message.guild.roles.cache.find(
       (role) => role.id === "1182686162108813373"
     );
     if (role) {
       message.member.roles.add(role);
     }
-    if (message.content === "hi") {
+    if (command === "hi") {
       message.channel.send("hi");
     }
-    if (message.content.match(/https?:\/\/\S+/) && !message.content.match("https://tenor.com/view/")) {
+    if (command.match(/https?:\/\/\S+/) && !command.match("https://tenor.com/view/")) {
       if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
       } else {
         if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner))) {
