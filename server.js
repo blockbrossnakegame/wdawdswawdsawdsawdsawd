@@ -127,8 +127,7 @@ client.on("message", async (message) => {
         if (mention) {
           mention.kick()
           .then(member => {
-            message.channel.send(`<@${mention}> has been kicked L`);
-            mention.send(`You have been kick from Bruinebies's New York Pizza. You can always rejoin.`)
+            message.channel.send(`${mention} has been kicked L`);
           })
           .catch(error => {
              message.channel.send(`Failed :(`);
@@ -144,8 +143,7 @@ client.on("message", async (message) => {
         if (mention) {
           mention.ban()
           .then(member => {
-            message.channel.send(`<@${mention}> has been banned L`);
-            mention.send(`You have been banned from Bruinebies's New York Pizza. Probably for a good reason.`)
+            message.channel.send(`${mention} has been banned L`);
           })
           .catch(error => {
              message.channel.send(`Failed :(`);
