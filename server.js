@@ -54,8 +54,14 @@ client.on("message", async (message) => {
       message.member.roles.add(role);
     }
     if (message.channelId === "1185652419976237208" || message.channelId === "1210240257669337118") {
-      message.react('<:BiesBotAccepted:1185991882543734815>');
-      message.react('<:BiesBotDeclined:1186037391534850048>');
+      const acceptedemoji = client.emojis.cache.get('1185991882543734815');
+      const declinedemoji = client.emojis.cache.get('1186037391534850048');
+      if (acceptedemoji) {
+        message.react(acceptedemoji);
+      }
+      if (declinedemoji) {
+        message.react(declinedemoji);
+      }
     }
     if (command === "hi") {
       message.channel.send("hi");
