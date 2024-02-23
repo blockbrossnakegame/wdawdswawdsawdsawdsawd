@@ -127,13 +127,14 @@ client.on("message", async (message) => {
         if (mention) {
           mention.kick()
           .then(member => {
-            message.channel.send(`<@${message.author.id}> has been kicked.`);
+            message.channel.send(`<@${mention}> has been kicked L`);
+            mention.send(`You have been kick from Bruinebies's New York Pizza. You can always rejoin.`)
           })
           .catch(error => {
-             message.channel.send(`Failed to kick the member`);
+             message.channel.send(`Failed :(`);
           });
         } else {
-          message.channel.send("Please mention a user to kick.");
+          message.channel.send("Do @ someone to kick them");
         }
       }
     }
@@ -143,13 +144,14 @@ client.on("message", async (message) => {
         if (mention) {
           mention.ban()
           .then(member => {
-            message.channel.send(`<@${message.author.id}> has been banned.`);
+            message.channel.send(`<@${mention}> has been banned L`);
+            mention.send(`You have been banned from Bruinebies's New York Pizza. Probably for a good reason.`)
           })
           .catch(error => {
-             message.channel.send(`Failed to ban the member`);
+             message.channel.send(`Failed :(`);
           });
         } else {
-          message.channel.send("Please mention a user to ban.");
+          message.channel.send("Do @ someone to ban them");
         }
       }
     }
