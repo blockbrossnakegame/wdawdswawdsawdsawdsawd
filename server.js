@@ -45,7 +45,7 @@ app.get("/effect2", (req, res) => {
   res.send(`bies-bot 2`)
 })
 
-client.on("message", async (message) => {
+client.on("messageCreate", async (message) => {
   if (message.author.bot) {
   } else {
     const command = message.content.toLowerCase()
