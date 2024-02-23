@@ -53,13 +53,8 @@ client.on("message", async (message) => {
     if (role) {
       message.member.roles.add(role);
     }
-    if (message.channelId === "1185652419976237208" || message.channelId === "1210240257669337118") {
-      message.react('✅');
-      message.react('❎');
-    }
     if (command === "hi") {
       message.channel.send("hi");
-      message.react('👋')
     }
     if (command.match(/https?:\/\/\S+/) && !command.match("https://tenor.com/view/")) {
       if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
@@ -116,6 +111,7 @@ client.on("message", async (message) => {
       message.channel.send(
         `Yes, yes he is.`
       );
+      message.react('👍')
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
       if (message.author.id === '904076782666391583' || message.author.id === '1017921613913657364') {
@@ -131,9 +127,9 @@ client.on("message", async (message) => {
 client.on("messageDelete", async (deletedMessage) => {
   let channel = client.channels.cache.get("1185295538720100362");
   const embed = new MessageEmbed()
-    .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
-    .setDescription(`**Message content:** ${deletedMessage.content}`)
-    .setColor("#ff0000");
+  .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
+  .setDescription(`**Message content:** ${deletedMessage.content}`)
+  .setColor("#ff0000");
   channel.send(embed);
 });
 
