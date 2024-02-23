@@ -53,6 +53,10 @@ client.on("message", async (message) => {
     if (role) {
       message.member.roles.add(role);
     }
+    if (message.channelId === "1185652419976237208" || message.channelId === "1210240257669337118") {
+      message.react('<:BiesBotAccepted:1185991882543734815>');
+      message.react('<:BiesBotDeclined:1186037391534850048>');
+    }
     if (command === "hi") {
       message.channel.send("hi");
     }
