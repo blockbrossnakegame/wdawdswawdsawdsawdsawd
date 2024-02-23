@@ -121,6 +121,38 @@ client.on("message", async (message) => {
         );
       }
     }
+    if (command.match("!kick") {
+      if (message.member.hasPermission('KICK_MEMBERS')) {
+        const mention = message.mentions.members.first();
+        if (mention) {
+          mention.kick()
+          .then(member => {
+            message.channel.send(`<@${message.author.id}> has been kicked.`);
+          })
+          .catch(error => {
+             message.channel.send(`Failed to kick the member`);
+          });
+        } else {
+          message.channel.send("Please mention a user to kick.");
+        }
+      }
+    }
+    if (command.match("!ban") {
+      if (message.member.hasPermission('BAN_MEMBERS')) {
+        const mention = message.mentions.members.first();
+        if (mention) {
+          mention.ban()
+          .then(member => {
+            message.channel.send(`<@${message.author.id}> has been banned.`);
+          })
+          .catch(error => {
+             message.channel.send(`Failed to ban the member`);
+          });
+        } else {
+          message.channel.send("Please mention a user to ban.");
+        }
+      }
+    }
   }
 });
 
