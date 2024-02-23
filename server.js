@@ -59,6 +59,7 @@ client.on("message", async (message) => {
     }
     if (command === "hi") {
       message.channel.send("hi");
+      message.react('👋')
     }
     if (command.match(/https?:\/\/\S+/) && !command.match("https://tenor.com/view/")) {
       if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
