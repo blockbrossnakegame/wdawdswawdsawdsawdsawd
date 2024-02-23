@@ -121,7 +121,7 @@ client.on("message", async (message) => {
         );
       }
     }
-    if (command.match("!kick") {
+    if (command.match("!kick")) {
       if (message.member.hasPermission('KICK_MEMBERS')) {
         const mention = message.mentions.members.first();
         if (mention) {
@@ -137,7 +137,7 @@ client.on("message", async (message) => {
         }
       }
     }
-    if (command.match("!ban") {
+    if (command.match("!ban")) {
       if (message.member.hasPermission('BAN_MEMBERS')) {
         const mention = message.mentions.members.first();
         if (mention) {
