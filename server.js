@@ -22,7 +22,7 @@ app.get("/effect1", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
   const embed = new MessageEmbed()
-  .setTitle(`A death effect has been updated in Trappers VS Runners`)
+  .setTitle(`A death effect has been updated.`)
   .setDescription(`<:EffectID:1210571709061660734> Effect ID: **${effectname}#1**
   <:CreatorID:1210572085563232277> Creator ID: [${effectname} (View profile)](<https://www.roblox.com/users/${effectname}/profile>)`)
   .setColor("a0ad96");
@@ -34,7 +34,7 @@ app.get("/effect2", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
   const embed = new MessageEmbed()
-  .setTitle(`A death effect has been updated in Trappers VS Runners`)
+  .setTitle(`A death effect has been updated.`)
   .setDescription(`<:EffectID:1210571709061660734> Effect ID: **${effectname}#2**
   <:CreatorID:1210572085563232277> Creator ID: [${effectname} (View profile)](<https://www.roblox.com/users/${effectname}/profile>)`)
   .setColor("a0ad96");
