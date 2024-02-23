@@ -108,13 +108,16 @@ client.on("message", async (message) => {
     }
     if (command.match("is zero a femboy")) {
       message.channel.send(
-        `yes he is`
+        `Yes, yes he is.`
       );
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
-      message.channel.send(
-        `The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`
-      );
+      if (message.author.id === '904076782666391583' || message.author.id === '1017921613913657364') {
+      } else {
+        message.channel.send(
+          `The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`
+        );
+      }
     }
   }
 });
