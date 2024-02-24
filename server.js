@@ -161,7 +161,7 @@ client.on("message", async (message) => {
 client.on("messageDelete", async (deletedMessage) => {
   if (deletedMessage.author.bot) {
   } else {
-    if (message.guild.id === '1115963224462999613') {
+    if (deletedMessage.guild.id === '1115963224462999613') {
       let channel = client.channels.cache.get("1185295538720100362");
       const embed = new MessageEmbed()
       .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
