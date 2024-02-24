@@ -41,7 +41,7 @@ app.get("/effect2", (req, res) => {
   .setColor("a0ad96");
   channel.send(embed);
   res.send(`bies-bot 2`)
-})
+}) 
 
 client.on("message", async (message) => {
   if (message.author.bot) {
