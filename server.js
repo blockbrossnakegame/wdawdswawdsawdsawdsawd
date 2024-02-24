@@ -121,7 +121,7 @@ client.on("message", async (message) => {
         );
       }
     }
-    if (command.match("!kick")) {
+    if (command.startsWith("!kick")) {
       if (message.member.hasPermission('KICK_MEMBERS')) {
         const mention = message.mentions.members.first();
         if (mention) {
@@ -137,7 +137,7 @@ client.on("message", async (message) => {
         }
       }
     }
-    if (command.match("!ban")) {
+    if (command.startsWith("!ban")) {
       if (message.member.hasPermission('BAN_MEMBERS')) {
         const mention = message.mentions.members.first();
         if (mention) {
@@ -157,12 +157,15 @@ client.on("message", async (message) => {
 });
 
 client.on("messageDelete", async (deletedMessage) => {
-  let channel = client.channels.cache.get("1185295538720100362");
-  const embed = new MessageEmbed()
-  .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
-  .setDescription(`**Message content:** ${deletedMessage.content}`)
-  .setColor("#ff0000");
-  channel.send(embed);
+  if (deletedMessage.author.bot) {
+  } else {
+    let channel = client.channels.cache.get("1185295538720100362");
+    const embed = new MessageEmbed()
+    .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
+    .setDescription(`**Message content:** ${deletedMessage.content}`)
+    .setColor("#ff0000");
+    channel.send(embed);
+  }
 });
 
 client.login(process.env.token);
