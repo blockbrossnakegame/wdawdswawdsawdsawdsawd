@@ -114,11 +114,13 @@ client.on("message", async (message) => {
       message.react('👍')
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
-      if (message.author.id === '904076782666391583' || message.author.id === '1017921613913657364') {
-      } else {
-        message.channel.send(
+      if (message.guild.id === '1115963224462999613') {
+        if (message.author.id === '904076782666391583' || message.author.id === '1017921613913657364') {
+        } else {
+          message.channel.send(
           `The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`
-        );
+          );
+        }
       }
     }
     if (command.startsWith("!kick")) {
@@ -159,12 +161,14 @@ client.on("message", async (message) => {
 client.on("messageDelete", async (deletedMessage) => {
   if (deletedMessage.author.bot) {
   } else {
-    let channel = client.channels.cache.get("1185295538720100362");
-    const embed = new MessageEmbed()
-    .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
-    .setDescription(`**Message content:** ${deletedMessage.content}`)
-    .setColor("#ff0000");
-    channel.send(embed);
+    if (message.guild.id === '1115963224462999613') {
+      let channel = client.channels.cache.get("1185295538720100362");
+      const embed = new MessageEmbed()
+      .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
+      .setDescription(`**Message content:** ${deletedMessage.content}`)
+      .setColor("#ff0000");
+      channel.send(embed);
+    }
   }
 });
 
