@@ -6,6 +6,7 @@ const app = express();
 const keep_alive = require('./keep_alive.js')
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
+const 
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
@@ -154,6 +155,34 @@ client.on("message", async (message) => {
           message.channel.send("Do @ someone to ban them");
         }
       }
+    }
+    if (command.startsWith("!reactionrole1")) {
+      message.channel.send(`The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`);
+    }
+  }
+});
+
+client.on("messageReactionAdd", async (reaction, user) => {
+  if (reaction.partial) {
+    try {
+      await reaction.fetch();
+    } catch (error) {
+      console.error("Error fetching reaction:", error);
+      return;
+    }
+  }
+  if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === '👍') {
+    const guild = reaction.message.guild;
+    const member = guild.members.cache.get(user.id);
+    const role = guild.roles.cache.find(role => role.name === 'Your Role Name');
+    if (member && role) {
+      member.roles.add(role)
+        .then(() => {
+          console.log(`Added role ${role.name} to user ${member.user.tag}`);
+        })
+        .catch(error => {
+          console.error("Error adding role:", error);
+        });
     }
   }
 });
