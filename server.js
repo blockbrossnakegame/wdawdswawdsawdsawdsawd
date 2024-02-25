@@ -165,39 +165,19 @@ client.on("message", async (message) => {
 });
 
 client.on("messageReactionAdd", async (reaction, user) => {
-  if (reaction.partial) {
-    try {
-      await reaction.fetch();
-    } catch (error) {
-      console.error("Error fetching reaction:", error);
-      return;
-    }
+  if (user.bot || reaction.partial) {
+    return;
   }
-  if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === 'Discord') {
+
+  if (reaction.emoji.id === "1210305121666469918" && reaction.message.id === "1211341173625593908") {
     const guild = reaction.message.guild;
     const member = guild.members.cache.get(user.id);
-    const role = guild.roles.cache.find(role => role.name === 'Server Pings');
+    const role = guild.roles.cache.find(role => role.name === "Server Pings");
     if (member && role) {
-      member.roles.add(role)
-        .then(() => {
-          console.log(`Added role ${role.name} to user ${member.user.tag}`);
-        })
-        .catch(error => {
-          console.error("Error adding role:", error);
-        });
-    }
-  } else if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === 'TvR') {
-    const guild = reaction.message.guild;
-    const member = guild.members.cache.get(user.id);
-    const role = guild.roles.cache.find(role => role.name === 'TvR Pings');
-    if (member && role) {
-      member.roles.add(role)
-        .then(() => {
-          console.log(`Added role ${role.name} to user ${member.user.tag}`);
-        })
-        .catch(error => {
-          console.error("Error adding role:", error);
-        });
+      try {
+        await member.roles.add(role);
+      } catch (error) {
+      }
     }
   }
 });
