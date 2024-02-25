@@ -157,7 +157,9 @@ client.on("message", async (message) => {
       }
     }
     if (command.startsWith("!reactionrole1")) {
-      message.channel.send(`The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`);
+      message.channel.send(`React with the emoji's below to get pings of whatever you want.
+      <:TvR:1211338554601644133> - Trappers VS Runners ping
+      <:Discord:1211339382439813150> - Server ping`);
     }
   }
 });
@@ -171,10 +173,23 @@ client.on("messageReactionAdd", async (reaction, user) => {
       return;
     }
   }
-  if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === '👍') {
+  if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === 'Discord') {
     const guild = reaction.message.guild;
     const member = guild.members.cache.get(user.id);
-    const role = guild.roles.cache.find(role => role.name === 'Your Role Name');
+    const role = guild.roles.cache.find(role => role.name === 'Server Pings');
+    if (member && role) {
+      member.roles.add(role)
+        .then(() => {
+          console.log(`Added role ${role.name} to user ${member.user.tag}`);
+        })
+        .catch(error => {
+          console.error("Error adding role:", error);
+        });
+    }
+  } else if (reaction.message.id === 'MESSAGE_ID' && reaction.emoji.name === 'TvR') {
+    const guild = reaction.message.guild;
+    const member = guild.members.cache.get(user.id);
+    const role = guild.roles.cache.find(role => role.name === 'TvR Pings');
     if (member && role) {
       member.roles.add(role)
         .then(() => {
