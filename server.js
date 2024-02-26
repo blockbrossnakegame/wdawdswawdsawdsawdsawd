@@ -6,7 +6,6 @@ const app = express();
 const keep_alive = require('./keep_alive.js')
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
-const 
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
