@@ -10,7 +10,7 @@ const
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
-})
+});
 
 client.on("ready", () => {
   client.user.setActivity("pizza in the oven", { type: "WATCHING" });
@@ -18,7 +18,7 @@ client.on("ready", () => {
 
 app.get("/", (req, res) => {
   res.send(`bies-bot 1.0`);
-})
+});
 
 app.get("/effect1", (req, res) => {
   var effectname = req.param("effectname");
@@ -30,7 +30,7 @@ app.get("/effect1", (req, res) => {
   .setColor("a0ad96");
   channel.send(embed);
   res.send(`bies-bot 1`)
-})
+});
 
 app.get("/effect2", (req, res) => {
   var effectname = req.param("effectname");
@@ -42,7 +42,7 @@ app.get("/effect2", (req, res) => {
   .setColor("a0ad96");
   channel.send(embed);
   res.send(`bies-bot 2`)
-}) 
+});
 
 client.on("message", async (message) => {
   if (message.author.bot) {
