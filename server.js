@@ -157,25 +157,6 @@ client.on("message", async (message) => {
   }
 });
 
-client.on("messageReactionAdd", async (reaction, user) => {
-  if (user.bot || reaction.partial) {
-    return;
-  }
-  reaction.message.channel.send(reaction.emoji.id)
-  if (reaction.emoji.id === ":bruinebies:1210305121666469918" && reaction.message.id === "1211341173625593908") {
-    const guild = reaction.message.guild;
-    const member = guild.members.cache.get(user.id);
-    const role = guild.roles.cache.find(role => role.name === "Server Pings");
-    if (member && role) {
-      try {
-        await member.roles.add(role);
-      } catch (error) {
-        console.error("Error adding role:", error);
-      }
-    }
-  }
-});
-
 client.on("messageDelete", async (deletedMessage) => {
   if (deletedMessage.author.bot) {
   } else {
