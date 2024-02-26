@@ -161,7 +161,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (user.bot || reaction.partial) {
     return;
   }
-  if (reaction.emoji.id === "<:bruinebies:1210305121666469918>" && reaction.message.id === "1211341173625593908") {
+  if (reaction.emoji.id === ":bruinebies:1210305121666469918" && reaction.message.id === "1211341173625593908") {
     const guild = reaction.message.guild;
     const member = guild.members.cache.get(user.id);
     const role = guild.roles.cache.find(role => role.name === "Server Pings");
