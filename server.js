@@ -90,13 +90,7 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.match("nigger")) {
-      message.delete();
-      message.channel.send(
-        `You can not be harassing people here buddy. <@${message.author.id}>`
-      );
-    }
-    if (command.match("nigga")) {
+    if (command.match("nigger") || command.match("nigga") || command.match("negro")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
@@ -160,6 +154,24 @@ client.on("message", async (message) => {
       message.channel.send(`React with the emoji's below to get pings of whatever you want.
       <:TvR:1211338554601644133> - Trappers VS Runners ping
       <:Discord:1211339382439813150> - Server ping`);
+    }
+  }
+});
+
+client.on("messageReactionAdd", async (reaction, user) => {
+  if (user.bot || reaction.partial) {
+    return;
+  }
+  if (reaction.emoji.id === "<:bruinebies:1210305121666469918>" && reaction.message.id === "1211341173625593908") {
+    const guild = reaction.message.guild;
+    const member = guild.members.cache.get(user.id);
+    const role = guild.roles.cache.find(role => role.name === "Server Pings");
+    if (member && role) {
+      try {
+        await member.roles.add(role);
+      } catch (error) {
+        console.error("Error adding role:", error);
+      }
     }
   }
 });
