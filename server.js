@@ -17,7 +17,7 @@ client.on("ready", () => {
 });
 
 app.get("/", (req, res) => {
-  res.send(`bies-bot`);
+  res.send(`bies-bot 1.0`);
 })
 
 app.get("/effect1", (req, res) => {
