@@ -157,9 +157,8 @@ client.on("message", async (message) => {
     }
     if (command.startsWith("!8ball")) {
       if (message.channelId === "1212075960275312640") {
-          let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
-          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
-        }
+        let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
+        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
       }
     }
     if (command.startsWith("!reactionrole1")) {
