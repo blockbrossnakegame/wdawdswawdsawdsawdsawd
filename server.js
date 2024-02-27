@@ -7,7 +7,7 @@ const keep_alive = require('./keep_alive.js')
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
 
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log("Bies-bot is waking up.");
 });
 
@@ -101,11 +101,11 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.match("is zero a femboy")) {
+    if (command.match("faggot")) {
+      message.delete();
       message.channel.send(
-        `Yes, yes he is.`
+        `You can not be harassing people here buddy. <@${message.author.id}>`
       );
-      message.react('👍')
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
       if (message.guild.id === '1115963224462999613') {
@@ -147,6 +147,12 @@ client.on("message", async (message) => {
         } else {
           message.channel.send("Do @ someone to ban them");
         }
+      }
+    }
+    if (command.startsWith("!membercount")) {
+      if (message.channelId === "1182059785768677478") {
+        const memberCount = message.guild.memberCount;
+        message.channel.send(`This server has ${memberCount} members including me!`);
       }
     }
     if (command.startsWith("!reactionrole1")) {
