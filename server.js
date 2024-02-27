@@ -156,7 +156,7 @@ client.on("message", async (message) => {
       }
     }
     if (command.startsWith("!8ball")) {
-      if (message.channelId === "1182059785768677478") {
+      if (message.channelId === "1212075960275312640") {
         if (command.match('is zero femboy') || command.match('is a zero femboy') || command.match('zero is femboy')) {
           message.channel.send(`🎱 yes zero is a femboy`);
         } else if (command.match('is bruinebies femboy') || command.match('is a bruinebies femboy') || command.match('bruinebies is femboy')) {
