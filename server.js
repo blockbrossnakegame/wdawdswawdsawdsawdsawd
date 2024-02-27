@@ -150,10 +150,8 @@ client.on("message", async (message) => {
       }
     }
     if (command.startsWith("!membercount")) {
-      if (message.channelId === "1212075960275312640") {
-        const memberCount = message.guild.memberCount;
-        message.channel.send(`This server has ${memberCount} members including me!`);
-      }
+      const memberCount = message.guild.memberCount;
+      message.channel.send(`This server has ${memberCount} members including me!`);
     }
     if (command.startsWith("!8ball")) {
       let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
