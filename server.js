@@ -150,7 +150,7 @@ client.on("message", async (message) => {
       }
     }
     if (command.startsWith("!membercount")) {
-      if (message.channelId === "1182059785768677478") {
+      if (message.channelId === "1212075960275312640") {
         const memberCount = message.guild.memberCount;
         message.channel.send(`This server has ${memberCount} members including me!`);
       }
