@@ -155,6 +155,20 @@ client.on("message", async (message) => {
         message.channel.send(`This server has ${memberCount} members including me!`);
       }
     }
+    if (message.content.startsWith("!work")) {
+      if (message.channelId === "1182059785768677478") {
+        let earnings = Math.floor(Math.random() * 50) + 1; // Random earnings between 1 and 50
+        let user = message.author.id;
+        let userBalance = db.get(`balance_${user}`) || 0;
+        db.add(`balance_${user}`, earnings);
+        message.channel.send(`You worked hard and earned ${earnings} <:bruinebies_bread:1197261457188982855>!`);
+      }
+    }
+    if (message.content === "!balance") {
+      let user = message.author.id;
+      let userBalance = db.get(`balance_${user}`) || 0;
+      message.channel.send(`Your current balance is ${userBalance} <:bruinebies_bread:1197261457188982855>.`);
+    }
     if (command.startsWith("!reactionrole1")) {
       message.channel.send(`React with the emoji's below to get pings of whatever you want.
       <:TvR:1211338554601644133> - Trappers VS Runners ping
