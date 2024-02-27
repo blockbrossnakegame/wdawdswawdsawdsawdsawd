@@ -160,7 +160,8 @@ client.on("message", async (message) => {
         if (command.match('is zero femboy') || command.match('is a zero femboy') || command.match('zero is femboy')) {
           message.channel.send(`🎱 yes zero is a femboy`);
         } else if (command.match('is bruinebies femboy') || command.match('is a bruinebies femboy') || command.match('bruinebies is femboy')) {
-          message.channel.send(`🎱 no bruinebies is not`);
+          let nicknames = [ "🎱no", "🎱no, you idiot",]
+          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
         } else {
           let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
           message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
