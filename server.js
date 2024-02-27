@@ -6,7 +6,6 @@ const app = express();
 const keep_alive = require('./keep_alive.js')
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
-const db = require("quick.db");
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
@@ -156,19 +155,17 @@ client.on("message", async (message) => {
         message.channel.send(`This server has ${memberCount} members including me!`);
       }
     }
-    if (command.startsWith("!work")) {
+    if (command.startsWith("!8ball")) {
       if (message.channelId === "1182059785768677478") {
-        let earnings = Math.floor(Math.random() * 50) + 1;
-        let user = message.author.id;
-        let userBalance = db.get(`balance_${user}`) || 0;
-        db.add(`balance_${user}`, earnings);
-        message.channel.send(`You worked hard and earned ${earnings} <:bruinebies_bread:1197261457188982855>!`);
+        if (command.match('is zero femboy') || command.match('is a zero femboy') || command.match('zero is femboy')) {
+          message.channel.send(`🎱 yes zero is a femboy`);
+        } else if (command.match('is bruinebies femboy') || command.match('is a bruinebies femboy') || command.match('bruinebies is femboy')) {
+          message.channel.send(`🎱 no bruinebies is not`);
+        } else {
+          let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
+          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+        }
       }
-    }
-    if (command.startsWith === "!bal") {
-      let user = message.author.id;
-      let userBalance = db.get(`balance_${user}`) || 0;
-      message.channel.send(`Your current balance is ${userBalance} <:bruinebies_bread:1197261457188982855>.`);
     }
     if (command.startsWith("!reactionrole1")) {
       message.channel.send(`React with the emoji's below to get pings of whatever you want.
