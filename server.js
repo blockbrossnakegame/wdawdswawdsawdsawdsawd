@@ -27,7 +27,7 @@ app.get("/effect1", (req, res) => {
   <:CreatorID:1210572085563232277> Creator ID: [${effectname} (View profile)](<https://www.roblox.com/users/${effectname}/profile>)`)
   .setColor("a0ad96");
   channel.send(embed);
-  res.send(`bies-bot 1`)
+  res.send(`bies-bot 1`);
 })
 
 app.get("/effect2", (req, res) => {
@@ -39,7 +39,7 @@ app.get("/effect2", (req, res) => {
   <:CreatorID:1210572085563232277> Creator ID: [${effectname} (View profile)](<https://www.roblox.com/users/${effectname}/profile>)`)
   .setColor("a0ad96");
   channel.send(embed);
-  res.send(`bies-bot 2`)
+  res.send(`bies-bot 2`);
 }) 
 
 client.on("message", async (message) => {
