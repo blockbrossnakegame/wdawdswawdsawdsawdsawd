@@ -9,15 +9,15 @@ const owner = '1115992837775953951';
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
-});
+})
 
 client.on("ready", () => {
   client.user.setActivity("pizza in the oven", { type: "WATCHING" });
 });
 
 app.get("/", (req, res) => {
-  res.send(`bies-bot 1.0`);
-});
+  res.send(`bies-bot`);
+})
 
 app.get("/effect1", (req, res) => {
   var effectname = req.param("effectname");
@@ -29,7 +29,7 @@ app.get("/effect1", (req, res) => {
   .setColor("a0ad96");
   channel.send(embed);
   res.send(`bies-bot 1`)
-});
+})
 
 app.get("/effect2", (req, res) => {
   var effectname = req.param("effectname");
@@ -41,7 +41,7 @@ app.get("/effect2", (req, res) => {
   .setColor("a0ad96");
   channel.send(embed);
   res.send(`bies-bot 2`)
-});
+}) 
 
 client.on("message", async (message) => {
   if (message.author.bot) {
@@ -89,7 +89,13 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.match("nigger") || command.match("nigga") || command.match("negro")) {
+    if (command.match("nigger")) {
+      message.delete();
+      message.channel.send(
+        `You can not be harassing people here buddy. <@${message.author.id}>`
+      );
+    }
+    if (command.match("nigga")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
@@ -101,11 +107,11 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.match("faggot")) {
-      message.delete();
+    if (command.match("is zero a femboy")) {
       message.channel.send(
-        `You can not be harassing people here buddy. <@${message.author.id}>`
+        `Yes, yes he is.`
       );
+      message.react('👍')
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
       if (message.guild.id === '1115963224462999613') {
