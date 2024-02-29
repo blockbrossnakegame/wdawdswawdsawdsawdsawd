@@ -89,13 +89,7 @@ client.on("message", async (message) => {
         `You can not be harassing people here buddy. <@${message.author.id}>`
       );
     }
-    if (command.match("nigger")) {
-      message.delete();
-      message.channel.send(
-        `You can not be harassing people here buddy. <@${message.author.id}>`
-      );
-    }
-    if (command.match("nigga")) {
+    if (command.match("nigger") || command.match("nigga")) {
       message.delete();
       message.channel.send(
         `You can not be harassing people here buddy. <@${message.author.id}>`
@@ -156,8 +150,16 @@ client.on("message", async (message) => {
       }
     }
     if (command.startsWith("!8ball")) {
-      let nicknames = ["🎱 yes", "🎱no", "🎱no, you idiot", "🎱︱idk why do you ask me?", "🎱︱too lazy to answer"]
-      message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+      if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
+        let nicknames = ["🎱no", "🎱no, you idiot", "🎱too lazy to answer"]
+        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+      } else if (command.match("is zero a femboy") || command.match("is zero femboy") {
+        let nicknames = ["🎱 yes", "🎱 yes r u that dumb?", "🎱too lazy to answer"]
+        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+      } else {
+        let nicknames = ["🎱 yes", "🎱 no", "🎱 yes r u that dumb?", "🎱no, you idiot", "🎱idk why do you ask me?", "🎱too lazy to answer"]
+        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+      }
     }
   }
 });
