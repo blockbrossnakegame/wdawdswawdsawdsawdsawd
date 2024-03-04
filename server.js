@@ -149,6 +149,10 @@ client.on("message", async (message) => {
         }
       }
     }
+    if (command.match("!reaction")) {
+      message.react('<:blue:1214218072253145158>')
+      message.react('<:TvR:1214282210555723827>')
+    }
     if (command.startsWith("!8ball")) {
       if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
         let nicknames = ["🎱no", "🎱no, you idiot", "🎱too lazy to answer"]
@@ -165,15 +169,43 @@ client.on("message", async (message) => {
 });
 
 client.on("messageReactionAdd", async (reaction, user) => {
-  if (reaction.message.partial) await reaction.message.fetch();
-  if (reaction.partial) await reaction.fetch();
-  if (reaction.message.id === "1214218115857129543" && user.id !== client.user.id) {
-    if (reaction.emoji.id === "1214218072253145158") {
-      let role = reaction.message.guild.roles.cache.find(role => role.name === "Server Pings");
-      if (role) {
+  if (user.bot) {
+  } else {
+    if (reaction.message.channel.id === '1214273786925424730') {
+      if (reaction.emoji.id === '1214218072253145158') {
+        let role = reaction.message.guild.roles.cache.get("1185291748365303838");
         let member = reaction.message.guild.members.cache.get(user.id);
         if (member) {
           member.roles.add(role);
+        }
+      }
+      if (reaction.emoji.id === '1214282210555723827') {
+        let role = reaction.message.guild.roles.cache.get("1185291790467739769");
+        let member = reaction.message.guild.members.cache.get(user.id);
+        if (member) {
+          member.roles.add(role);
+        }
+      }
+    }
+  }
+});
+
+client.on("messageReactionRemove", async (reaction, user) => {
+  if (user.bot) {
+  } else {
+    if (reaction.message.channel.id === '1214273786925424730') {
+      if (reaction.emoji.id === '1214218072253145158') {
+        let role = reaction.message.guild.roles.cache.get("1185291748365303838");
+        let member = reaction.message.guild.members.cache.get(user.id);
+        if (member) {
+          member.roles.remove(role);
+        }
+      }
+      if (reaction.emoji.id === '1214282210555723827') {
+        let role = reaction.message.guild.roles.cache.get("1185291790467739769");
+        let member = reaction.message.guild.members.cache.get(user.id);
+        if (member) {
+          member.roles.remove(role);
         }
       }
     }
