@@ -168,7 +168,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
   if (reaction.message.id === "1214218115857129543" && user.id !== client.user.id) {
-    if (reaction.emoji.id === "<:blue:1214218072253145158>") {
+    if (reaction.emoji.id === "1214218072253145158") {
       let role = reaction.message.guild.roles.cache.find(role => role.name === "Server Pings");
       if (role) {
         let member = reaction.message.guild.members.cache.get(user.id);
