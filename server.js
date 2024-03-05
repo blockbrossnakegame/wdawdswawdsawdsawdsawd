@@ -216,12 +216,14 @@ client.on("messageUpdate", async (oldMessage, newMessage) => {
     oldMessage.react('<:YellowChaosEmerald:1214592470399320064>')
   }
   if (channel) {
-    const embed = new MessageEmbed()
-    .setTitle(`${oldMessage.author.username}'s messages is edited`)
-    .setDescription(`**Old message content:** ${oldMessage.content}
-    **New message content:** ${newMessage.content}`)
-    .setColor("#FFBF00");
-    channel.send(embed);
+    if (oldMessage.guild.id === '1115963224462999613') {
+      const embed = new MessageEmbed()
+      .setTitle(`${oldMessage.author.username}'s messages is edited`)
+      .setDescription(`**Old message content:** ${oldMessage.content}
+      **New message content:** ${newMessage.content}`)
+      .setColor("#FFBF00");
+      channel.send(embed);
+    }
   }
 });
 
