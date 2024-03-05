@@ -168,7 +168,7 @@ client.on("message", async (message) => {
 !help - the command u just used
 !8ball - answers your questions`)
       .setColor("#FFBF00");
-      channel.send(embed)
+      message.channel.send(embed)
     }
   }
 });
