@@ -161,6 +161,15 @@ client.on("message", async (message) => {
         message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
       }
     }
+    if (command.startsWith("!help")) {
+      const embed = new MessageEmbed()
+      .setTitle(`**Help**`)
+      .setDescription(`Tbh idk what to write here but here are some commands u can use
+!help - the command u just used
+!8ball - answers your questions`)
+      .setColor("#FFBF00");
+      channel.send(embed)
+    }
   }
 });
 
