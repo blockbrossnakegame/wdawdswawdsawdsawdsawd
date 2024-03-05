@@ -151,7 +151,7 @@ client.on("message", async (message) => {
     }
     if (command.match("!reaction")) {
       message.react('<:blue:1214218072253145158>')
-      message.react('<:TvR:1214282210555723827>')
+      message.react('<:YellowChaosEmerald:1214592470399320064>')
     }
     if (command.startsWith("!8ball")) {
       if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
@@ -179,7 +179,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
           member.roles.add(role);
         }
       }
-      if (reaction.emoji.id === '1214282210555723827') {
+      if (reaction.emoji.id === '1214592470399320064') {
         let role = reaction.message.guild.roles.cache.get("1185291790467739769");
         let member = reaction.message.guild.members.cache.get(user.id);
         if (member) {
@@ -201,7 +201,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
           member.roles.remove(role);
         }
       }
-      if (reaction.emoji.id === '1214282210555723827') {
+      if (reaction.emoji.id === '1214592470399320064') {
         let role = reaction.message.guild.roles.cache.get("1185291790467739769");
         let member = reaction.message.guild.members.cache.get(user.id);
         if (member) {
@@ -209,6 +209,25 @@ client.on("messageReactionRemove", async (reaction, user) => {
         }
       }
     }
+  }
+});
+
+client.on("messageUpdate", async (oldMessage, newMessage) => {
+  if (newMessage.author.bot) return;
+  const channel = client.channels.cache.get("1185295538720100362"); 
+  if (newMessage.content.match("!reaction")) {
+    oldMessage.react('<:blue:1214218072253145158>')
+    oldMessage.react('<:YellowChaosEmerald:1214592470399320064>')
+  }
+  if (channel) {
+    const embed = new MessageEmbed()
+    .setTitle(`${oldMessage.author.username}'s messages is edited`)
+    .setDescription(`**Old message content:** ${oldMessage.content}
+    **New message content:** ${newMessage.content}`)
+    .setColor("#FFBF00");
+    channel.send(embed);
+    const editedMessage = `Message edited by ${newMessage.author}: ${newMessage.content}`;
+    channel.send(editedMessage);
   }
 });
 
