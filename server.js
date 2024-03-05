@@ -149,10 +149,6 @@ client.on("message", async (message) => {
         }
       }
     }
-    if (command.match("!reaction")) {
-      message.react('<:blue:1214218072253145158>')
-      message.react('<:YellowChaosEmerald:1214592470399320064>')
-    }
     if (command.startsWith("!8ball")) {
       if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
         let nicknames = ["🎱no", "🎱no, you idiot", "🎱too lazy to answer"]
@@ -226,8 +222,6 @@ client.on("messageUpdate", async (oldMessage, newMessage) => {
     **New message content:** ${newMessage.content}`)
     .setColor("#FFBF00");
     channel.send(embed);
-    const editedMessage = `Message edited by ${newMessage.author}: ${newMessage.content}`;
-    channel.send(editedMessage);
   }
 });
 
