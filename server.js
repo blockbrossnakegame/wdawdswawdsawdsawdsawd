@@ -48,8 +48,8 @@ app.get("/ruineddevelopment", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
   const embed = new MessageEmbed()
-  const guild = client.guilds.cache.get('1215024343051010069');
-  const member = message.guild.members.cache.find(member => member.user.username === effectname);
+  const theguild = client.guilds.cache.get('1215024343051010069');
+  const member = theguild.members.cache.find(member => member.user.username === effectname);
   if (member) {
     member.roles.add('1217504460893589624');
   }
