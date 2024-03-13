@@ -51,9 +51,15 @@ app.get("/ruineddevelopment", (req, res) => {
   const theguild = client.guilds.cache.get('1215024343051010069');
   const member = theguild.members.cache.find(member => member.user.username === effectname);
   if (member) {
-    member.roles.add('1217504460893589624');
+    if (member.roles.cache.has(role.id)) {
+      res.send(`hello 1`);
+    } else {
+      member.roles.add('1217504460893589624');
+      res.send(`hello`);
+    }
+  } else {
+    res.send(`hello 1`);
   }
-  res.send(`hello`);
 }) 
 
 client.on("message", async (message) => {
