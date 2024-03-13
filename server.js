@@ -6,6 +6,7 @@ const keep_alive = require('./keep_alive.js');
 const app = express();
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
+const imagepermsRuined = '1115992837775953951';
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
@@ -43,6 +44,18 @@ app.get("/effect2", (req, res) => {
   res.send(`bies-bot 2`);
 }) 
 
+app.get("/ruineddevelopment", (req, res) => {
+  var effectname = req.param("effectname");
+  let channel = client.channels.cache.get("1210262876288319559");
+  const embed = new MessageEmbed()
+  const guild = client.guilds.cache.get('1215024343051010069');
+  const member = message.guild.members.cache.find(member => member.user.username === effectname);
+  if (member) {
+    member.roles.add('1217504460893589624');
+  }
+  res.send(`hello`);
+}) 
+
 client.on("message", async (message) => {
   if (message.author.bot) {
   } else {
@@ -59,7 +72,7 @@ client.on("message", async (message) => {
     if (command.match(/https?:\/\/\S+/) && !command.match("https://tenor.com/view/")) {
       if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
       } else {
-        if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner))) {
+        if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner)) || (message.member.roles.cache.some(role => role.id === imagepermsRuined))) {
         } else {
           message.delete();
           message.channel.send(
