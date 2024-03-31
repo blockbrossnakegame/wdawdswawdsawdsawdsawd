@@ -7,41 +7,6 @@ const app = express();
 const allowedRole = '1208186017337581699';
 const owner = '1115992837775953951';
 const imagepermsRuined = '1115992837775953951';
-let db = new sqlite3.Database('economy.db');
-
-db.serialize(() => {
-  db.run("CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, balance INTEGER)");
-});
-
-function getBalance(userId, callback) {
-  db.get("SELECT balance FROM users WHERE id = ?", userId, (err, row) => {
-    if (err) {
-      console.error(err);
-      callback(null);
-    } else {
-      callback(row ? row.balance : 0);
-    }
-  });
-}
-
-function updateBalance(userId, amount, callback) {
-  db.get("SELECT balance FROM users WHERE id = ?", userId, (err, row) => {
-    if (err) {
-      console.error(err);
-      callback(false);
-    } else {
-      let newBalance = (row ? row.balance : 0) + amount;
-      db.run("INSERT OR REPLACE INTO users (id, balance) VALUES (?, ?)", userId, newBalance, (err) => {
-        if (err) {
-          console.error(err);
-          callback(false);
-        } else {
-          callback(true);
-        }
-      });
-    }
-  });
-}
 
 app.listen(3000, () => {
   console.log("Bies-bot is waking up.");
@@ -166,21 +131,6 @@ client.on("message", async (message) => {
         `Yes, yes he is.`
       );
       message.react('👍')
-    }
-    if (command === '!balance') {
-      getBalance(message.author.id, balance => {
-        message.reply(`Your balance is: $${balance}`);
-      });
-    }
-    if (command.startsWith('!earn')) {
-      let amount = parseInt(message.content.split(' ')[1]);
-      updateBalance(message.author.id, amount, success => {
-        if (success) {
-          message.reply(`You earned $${amount}!`);
-        } else {
-          message.reply('Failed to update balance.');
-        }
-      });
     }
     if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
       if (message.guild.id === '1115963224462999613') {
