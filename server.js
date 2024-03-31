@@ -65,6 +65,8 @@ app.get("/ruineddevelopment", (req, res) => {
 client.on("message", async (message) => {
   if (message.author.bot) {
   } else {
+    if (message.channel.type === 'dm') {
+    } else {
     const command = message.content.toLowerCase()
     let role = message.guild.roles.cache.find(
       (role) => role.id === "1182686162108813373"
@@ -152,43 +154,44 @@ client.on("message", async (message) => {
         }
       }
     }
-    if (command.startsWith("!ban")) {
-      if (message.member.hasPermission('BAN_MEMBERS')) {
-        const mention = message.mentions.members.first();
-        if (mention) {
-          mention.ban()
-          .then(member => {
-            message.channel.send(`${mention} has been banned L`);
-          })
-          .catch(error => {
-             message.channel.send(`Failed :(`);
-          });
-        } else {
-          message.channel.send("Do @ someone to ban them");
+      if (command.startsWith("!ban")) {
+        if (message.member.hasPermission('BAN_MEMBERS')) {
+          const mention = message.mentions.members.first();
+          if (mention) {
+            mention.ban()
+            .then(member => {
+              message.channel.send(`${mention} has been banned L`);
+            })
+            .catch(error => {
+               message.channel.send(`Failed :(`);
+            });
+          } else {
+            message.channel.send("Do @ someone to ban them");
+          }
         }
       }
-    }
-    if (command.startsWith("!8ball")) {
-      if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
-        let nicknames = ["🎱no", "🎱no, you idiot", "🎱too lazy to answer"]
-        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
-      } else if (command.match("is zero a femboy") || command.match("is zero femboy")) {
-        let nicknames = ["🎱 yes", "🎱 yes r u that dumb?", "🎱too lazy to answer"]
-        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
-      } else {
-        let nicknames = ["🎱 yes", "🎱 no", "🎱 yes r u that dumb?", "🎱no, you idiot", "🎱idk why do you ask me?", "🎱too lazy to answer"]
-        message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+      if (command.startsWith("!8ball")) {
+        if (command.match("is bruinebies a femboy") || command.match("is bruinebies femboy")) {
+          let nicknames = ["🎱no", "🎱no, you idiot", "🎱too lazy to answer"]
+          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+        } else if (command.match("is zero a femboy") || command.match("is zero femboy")) {
+          let nicknames = ["🎱 yes", "🎱 yes r u that dumb?", "🎱too lazy to answer"]
+          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+        } else {
+          let nicknames = ["🎱 yes", "🎱 no", "🎱 yes r u that dumb?", "🎱no, you idiot", "🎱idk why do you ask me?", "🎱too lazy to answer"]
+          message.channel.send(`${nicknames[Math.floor(Math.random() * nicknames.length)]}`);
+        }
       }
-    }
-    if (command.startsWith("!help")) {
-      const embed = new MessageEmbed()
-      .setTitle(`**Help**`)
-      .setDescription(`Tbh idk what to write here but here are some commands u can use.
-
+      if (command.startsWith("!help")) {
+        const embed = new MessageEmbed()
+        .setTitle(`**Help**`)
+        .setDescription(`Tbh idk what to write here but here are some commands u can use.
+      
 **!help** - the command u just used
 **!8ball** - answers your questions`)
-      .setColor("#FFBF00");
-      message.channel.send(embed)
+        .setColor("#FFBF00");
+        message.channel.send(embed)
+      }
     }
   }
 });
