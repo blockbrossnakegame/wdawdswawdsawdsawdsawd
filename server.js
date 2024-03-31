@@ -66,6 +66,10 @@ client.on("message", async (message) => {
   if (message.author.bot) {
   } else {
     if (message.channel.type === 'dm') {
+      const command = message.content.toLowerCase()
+      if (command === "hi") {
+        message.author.send("hi");
+      }
     } else {
     const command = message.content.toLowerCase()
     let role = message.guild.roles.cache.find(
