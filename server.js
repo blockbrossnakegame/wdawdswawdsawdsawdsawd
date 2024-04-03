@@ -200,57 +200,9 @@ client.on("message", async (message) => {
   }
 });
 
-client.on("messageReactionAdd", async (reaction, user) => {
-  if (user.bot) {
-  } else {
-    if (reaction.message.channel.id === '1214273786925424730') {
-      if (reaction.emoji.id === '1214218072253145158') {
-        let role = reaction.message.guild.roles.cache.get("1185291748365303838");
-        let member = reaction.message.guild.members.cache.get(user.id);
-        if (member) {
-          member.roles.add(role);
-        }
-      }
-      if (reaction.emoji.id === '1214592470399320064') {
-        let role = reaction.message.guild.roles.cache.get("1185291790467739769");
-        let member = reaction.message.guild.members.cache.get(user.id);
-        if (member) {
-          member.roles.add(role);
-        }
-      }
-    }
-  }
-});
-
-client.on("messageReactionRemove", async (reaction, user) => {
-  if (user.bot) {
-  } else {
-    if (reaction.message.channel.id === '1214273786925424730') {
-      if (reaction.emoji.id === '1214218072253145158') {
-        let role = reaction.message.guild.roles.cache.get("1185291748365303838");
-        let member = reaction.message.guild.members.cache.get(user.id);
-        if (member) {
-          member.roles.remove(role);
-        }
-      }
-      if (reaction.emoji.id === '1214592470399320064') {
-        let role = reaction.message.guild.roles.cache.get("1185291790467739769");
-        let member = reaction.message.guild.members.cache.get(user.id);
-        if (member) {
-          member.roles.remove(role);
-        }
-      }
-    }
-  }
-});
-
 client.on("messageUpdate", async (oldMessage, newMessage) => {
   if (newMessage.author.bot) return;
-  const channel = client.channels.cache.get("1185295538720100362"); 
-  if (newMessage.content.match("!reaction")) {
-    oldMessage.react('<:blue:1214218072253145158>')
-    oldMessage.react('<:YellowChaosEmerald:1214592470399320064>')
-  }
+  const channel = client.channels.cache.get("1225151478839119902"); 
   if (channel) {
     if (oldMessage.guild.id === '1115963224462999613') {
       const embed = new MessageEmbed()
@@ -267,7 +219,7 @@ client.on("messageDelete", async (deletedMessage) => {
   if (deletedMessage.author.bot) {
   } else {
     if (deletedMessage.guild.id === '1115963224462999613') {
-      let channel = client.channels.cache.get("1185295538720100362");
+      let channel = client.channels.cache.get("1225151427513679872");
       const embed = new MessageEmbed()
       .setTitle(`${deletedMessage.author.username}'s messages is deleted`)
       .setDescription(`**Message content:** ${deletedMessage.content}`)
