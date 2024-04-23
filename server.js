@@ -62,7 +62,8 @@ client.on("message", async (message) => {
       message.channel.send("hi");
     }
     if (command.match(/https?:\/\/\S+/) && !command.match("https://tenor.com/view/")) {
-      if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
+      if (message.guild.id === '1115963224462999613') {
+        if (message.channelId === "1182414660855672953" || message.channelId === "1182059785768677478") {
       } else {
         if (message.member.roles.cache.some(role => role.id === allowedRole) || (message.member.roles.cache.some(role => role.id === owner)) || (message.member.roles.cache.some(role => role.id === imagepermsRuined))) {
         } else {
@@ -72,6 +73,7 @@ client.on("message", async (message) => {
           );
         }
       }
+    }
     }
     if (command.match("discord.gg")) {
       if (message.channelId === "1182414660855672953") {
