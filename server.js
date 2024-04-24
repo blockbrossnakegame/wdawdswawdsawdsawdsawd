@@ -114,16 +114,6 @@ client.on("message", async (message) => {
       );
       message.react('👍')
     }
-    if (command.match("<@904076782666391583>") || command.match("<@1017921613913657364>")) {
-      if (message.guild.id === '1115963224462999613') {
-        if (message.author.id === '904076782666391583' || message.author.id === '1017921613913657364') {
-        } else {
-          message.channel.send(
-          `The owner and the admins has pings turned off so it doesn't work + u look really stupid rn. <@${message.author.id}>`
-          );
-        }
-      }
-    }
     if (command.startsWith("!kick")) {
       if (message.member.hasPermission('KICK_MEMBERS')) {
         const mention = message.mentions.members.first();
