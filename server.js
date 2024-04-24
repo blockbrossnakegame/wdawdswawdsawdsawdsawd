@@ -178,6 +178,13 @@ client.on("message", async (message) => {
         .setColor("#FFBF00");
         message.channel.send(embed)
       }
+      if(command.startsWith(".msg")) {
+        if(message.author.id === ("904076782666391583")) {
+          message.delete()
+          var text = message.content.split(' ').slice(1).join(' ')
+          message.channel.send(text)
+        }
+      }
     }
   }
 });
