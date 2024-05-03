@@ -24,6 +24,18 @@ app.get("/2", (req, res) => {
   res.send(`bies-bot`);
 })
 
+app.get("/test", (req, res) => {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const messages = await channel.messages.fetch({ limit: 100 });
+    const themessage = messages.find((message) => message.content.includes('Data:'));
+    if (themessage) {
+      var text = message.content.split(' ').slice(1).join(' ');
+      res.send(text);
+    } else {
+      res.send(`no data`);
+    }
+})
+
 app.get("/ruineddevelopment", (req, res) => {
   var effectname = req.param("effectname");
   let channel = client.channels.cache.get("1210262876288319559");
