@@ -122,7 +122,7 @@ client.on("message", async (message) => {
     }
     if (command.match("is zero a femboy")) {
       message.channel.send(
-        `Yes, yes he is.`
+        `Yes, yes zero is.`
       );
       message.react('👍')
     }
@@ -177,9 +177,65 @@ client.on("message", async (message) => {
       
 **!help** - the command u just used
 **!8ball** - answers your questions`)
-        .setColor("#FFBF00");
+        .setColor("#90EE90");
         message.channel.send(embed)
       }
+      if (message.content.startsWith("!left")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const messages = await channel.messages.fetch({ limit: 100 });
+    const themessage = messages.find((message) => message.content.includes('Data:'));
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[1];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Position has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
+  if (message.content.startsWith("!right")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const messages = await channel.messages.fetch({ limit: 100 });
+    const themessage = messages.find((message) => message.content.includes('Data:'));
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[1];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Position has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
+  if (message.content.startsWith("!walk")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const messages = await channel.messages.fetch({ limit: 100 });
+    const themessage = messages.find((message) => message.content.includes('Data:'));
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[3];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Position has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
+  if (message.content.startsWith("!backwards")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const messages = await channel.messages.fetch({ limit: 100 });
+    const themessage = messages.find((message) => message.content.includes('Data:'));
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[3];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Position has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
       if(command.startsWith(".msg")) {
         if(message.author.id === ("904076782666391583")) {
           message.delete()
