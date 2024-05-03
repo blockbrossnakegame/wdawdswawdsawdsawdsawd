@@ -29,7 +29,7 @@ app.get("/test", async (req, res) => {
     const messages = await channel.messages.fetch({ limit: 100 });
     const themessage = messages.find((message) => message.content.includes('Data:'));
     if (themessage) {
-      var text = message.content.split(' ').slice(1).join(' ');
+      var text = themessage.content.split(' ').slice(1).join(' ');
       res.send(text);
     } else {
       res.send(`no data`);
