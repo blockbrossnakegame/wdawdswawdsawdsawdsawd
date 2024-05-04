@@ -231,6 +231,25 @@ client.on("message", async (message) => {
       message.channel.send(embed)
     }
   }
+      if(command.startsWith("!talk")) {
+        if(message.author.id === ("904076782666391583")) {
+          const channel = client.channels.cache.get("1232077870432522371");
+          const themessage = await channel.messages.fetch('1236262642029432892');
+          const wordToRemove = themessage.content.split(' ')[4];
+          const wordtoadd = message.content.split(' ')[1];
+          const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${wordtoadd}`);
+          themessage.edit(updatedWords);
+          const embed = new MessageEmbed()
+          .setTitle(`**Chat message has been updated in-game!**`)
+          .setColor("#90EE90");
+          message.channel.send(embed)
+        } else {
+          const embed = new MessageEmbed()
+          .setTitle(`**Command currently for bruinebies only!**`)
+          .setColor("#90EE90");
+          message.channel.send(embed)
+        }
+      }
       if(command.startsWith(".msg")) {
         if(message.author.id === ("904076782666391583")) {
           message.delete()
