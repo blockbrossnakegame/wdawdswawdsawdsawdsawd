@@ -231,6 +231,32 @@ client.on("message", async (message) => {
       message.channel.send(embed)
     }
   }
+  if (message.content.startsWith("!dance")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const themessage = await channel.messages.fetch('1236262642029432892');
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[5];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` yes`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Animation has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
+  if (message.content.startsWith("!dance stop")) {
+    const channel = client.channels.cache.get("1232077870432522371");
+    const themessage = await channel.messages.fetch('1236262642029432892');
+    if (themessage) {
+      const wordToRemove = themessage.content.split(' ')[5];
+      const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` no`);
+      themessage.edit(updatedWords);
+      const embed = new MessageEmbed()
+      .setTitle(`**Animation has updated in-game!**`)
+      .setColor("#90EE90");
+      message.channel.send(embed)
+    }
+  }
       if(command.startsWith("!talk")) {
         if(message.author.id === ("904076782666391583")) {
           const channel = client.channels.cache.get("1232077870432522371");
