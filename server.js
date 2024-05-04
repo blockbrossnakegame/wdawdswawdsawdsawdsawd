@@ -181,7 +181,7 @@ client.on("message", async (message) => {
       }
       if (message.content.startsWith("!left")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[1];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
@@ -194,7 +194,7 @@ client.on("message", async (message) => {
   }
   if (message.content.startsWith("!right")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[1];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
@@ -207,7 +207,7 @@ client.on("message", async (message) => {
   }
   if (message.content.startsWith("!walk")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[3];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
@@ -220,7 +220,7 @@ client.on("message", async (message) => {
   }
   if (message.content.startsWith("!backwards")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[3];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
@@ -233,7 +233,7 @@ client.on("message", async (message) => {
   }
   if (message.content.startsWith("!dance")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[5];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` yes`);
@@ -246,7 +246,7 @@ client.on("message", async (message) => {
   }
   if (message.content.startsWith("!dance stop")) {
     const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236262642029432892');
+    const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
       const wordToRemove = themessage.content.split(' ')[5];
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` no`);
@@ -260,7 +260,7 @@ client.on("message", async (message) => {
       if(command.startsWith("!talk")) {
         if(message.author.id === ("904076782666391583")) {
           const channel = client.channels.cache.get("1232077870432522371");
-          const themessage = await channel.messages.fetch('1236262642029432892');
+          const themessage = await channel.messages.fetch('1236313294873296907');
           const wordToRemove = themessage.content.split(' ')[4];
           const wordtoadd = message.content.split(' ')[1];
           const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${wordtoadd}`);
