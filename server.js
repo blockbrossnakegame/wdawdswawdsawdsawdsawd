@@ -244,7 +244,7 @@ client.on("message", async (message) => {
       message.channel.send(embed)
     }
   }
-  if (message.content.startsWith("!spinstop")) {
+  if (message.content.startsWith("!stopspin")) {
     const channel = client.channels.cache.get("1232077870432522371");
     const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
