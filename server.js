@@ -231,7 +231,7 @@ client.on("message", async (message) => {
       message.channel.send(embed)
     }
   }
-  if (message.content.startsWith("!dance")) {
+  if (message.content.startsWith("!spin")) {
     const channel = client.channels.cache.get("1232077870432522371");
     const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
@@ -244,7 +244,7 @@ client.on("message", async (message) => {
       message.channel.send(embed)
     }
   }
-  if (message.content.startsWith("!dance stop")) {
+  if (message.content.startsWith("!spin stop")) {
     const channel = client.channels.cache.get("1232077870432522371");
     const themessage = await channel.messages.fetch('1236313294873296907');
     if (themessage) {
