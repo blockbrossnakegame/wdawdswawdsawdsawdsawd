@@ -25,8 +25,8 @@ app.get("/2", (req, res) => {
 })
 
 app.get("/test", async (req, res) => {
-    const channel = client.channels.cache.get("1232077870432522371");
-    const themessage = await channel.messages.fetch('1236313294873296907');
+    const channel = client.channels.cache.get("1232077870432522371")
+    const themessage = await channel.messages.fetch('1236313294873296907')
     if (themessage) {
       var text = themessage.content.split(' ').slice(1).join(' ');
       res.send(text);
