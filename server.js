@@ -186,7 +186,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Position has updated in-game!**`)
+      .setTitle(`<:Success:1236732463309656096> **Position has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -199,7 +199,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Position has updated in-game!**`)
+      .setTitle(`<:Success:1236732463309656096> **Position has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -212,7 +212,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) + 1}`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Position has updated in-game!**`)
+      .setTitle(`<:Success:1236732463309656096> **Position has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -225,7 +225,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${parseInt(wordToRemove) - 1}`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Position has updated in-game!**`)
+      .setTitle(`<:Success:1236732463309656096> **Position has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -238,7 +238,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` yes`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Animation has updated in-game!**`)
+      .setTitle(`<:Success:1236732463309656096> **Animation has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -251,7 +251,7 @@ client.on("message", async (message) => {
       const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` no`);
       themessage.edit(updatedWords);
       const embed = new MessageEmbed()
-      .setTitle(`**Animation has updated in-game!**`)
+      .setTitle(`**<:Success:1236732463309656096> Animation has updated in-game!**`)
       .setColor("#90EE90");
       message.channel.send(embed)
     }
@@ -265,13 +265,13 @@ client.on("message", async (message) => {
           const updatedWords = themessage.content.replace(` ${wordToRemove}`, ` ${wordtoadd}`);
           themessage.edit(updatedWords);
           const embed = new MessageEmbed()
-          .setTitle(`**Chat message has been updated in-game!**`)
+          .setTitle(`<:Success:1236732463309656096> **Chat message has been updated in-game!**`)
           .setColor("#90EE90");
           message.channel.send(embed)
         } else {
           const embed = new MessageEmbed()
-          .setTitle(`**Command currently for bruinebies only!**`)
-          .setColor("#90EE90");
+          .setTitle(`<:NoSuccess:1236732681828434051> **Command currently for bruinebies only!**`)
+          .setColor("#750000");
           message.channel.send(embed)
         }
       }
